@@ -7,6 +7,7 @@ To run flask application
 
 ```
 python app.py
+use email:ahmed@gmai.com & password:selim
 ```
 
 
