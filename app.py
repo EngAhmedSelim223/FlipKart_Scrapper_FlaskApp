@@ -9,11 +9,13 @@ import pymongo
 logging.basicConfig(filemode="scrapper.log", level=logging.INFO)
 app = Flask(__name__)
 @app.route('/', methods = ['GET', 'POST'])
+@cross_origin
 def home_page():
     
     return render_template('homePage.html')
 
 @app.route('/admin', methods = ['GET','POST'])
+@cross_origin
 def login():
     if request.method == "POST":
         email = request.form['email']
@@ -26,6 +28,7 @@ def login():
 
     return result
 @app.route("/review" , methods = ['POST' , 'GET'])
+@cross_origin
 def index():
     if request.method == 'POST':
         try:
